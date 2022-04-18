@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  {% include "insurance/navbar.html" %}
+  <br><br>
+  <div class="jumbotron text-center" style="margin-bottom:0px;">
+    <h1 class="display-4">Cher client</h1>
+    <p class="lead">Bienvenu chez [nom_assurance]</p>
+    <hr class="my-4">
+    <p>Veuillez vous connecter pour continuer.</p>
+
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="customerlogin" role="button">Se connecter</a></p>
+
+          <p> <a class="btn btn-primary btn-lg" href="customerpassword" role="button">Mot de passe oublié ?</a></p>
+     <p>  <a class="btn btn-primary btn-lg" href="customersignup" role="button">Vous n’avez pas de compte  ? Inscrivez-vous</a>
+    </p>
+    <br><br><br>
+  </div>
+
+  {% include "insurance/footer.html" %}
+</body>
+
+</html>

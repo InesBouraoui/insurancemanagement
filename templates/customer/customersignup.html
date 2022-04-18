@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style>
+
+        form{
+           margin: 50px; 
+          
+        }
+
+    </style>
+  </head>
+  <body>
+    {% include "insurance/navbar.html" %}
+ 
+
+
+<br><br><br>
+<h3 style="text-align: center;color: red;">Inscription</h3>
+<form method="POST" autocomplete="off" enctype="multipart/form-data">
+    {% csrf_token %}
+       <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="username">Username</label>
+        {% render_field userForm.username|attr:'required:true'  class="form-control" placeholder="username" %}
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        {% render_field userForm.password|attr:'required:true'  class="form-control" placeholder="password" %}
+      </div>
+    </div>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <div class="form-row">
+    <div class="form-group col-md-6">
+          <label for="last_name">Nom</label>
+          {% render_field userForm.last_name|attr:'required:true'  class="form-control" placeholder="Nom" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="first_name">Prénom</label>
+          {% render_field userForm.first_name|attr:'required:true'  class="form-control" placeholder="Prénom" %}
+        </div>
+
+      </div>
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="mail">Adresse E-mail</label>
+          {% render_field customerForm.mail|attr:'required:true'  class="form-control" placeholder="Adresse E-mail" %}
+        </div>
+        <div class="form-group col-md-6">
+          <label for="mobile">Numéro de mobile</label>
+          {% render_field customerForm.mobile|attr:'required:true'  class="form-control" placeholder="Numéro de mobile" %}
+        </div>
+      </div>
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+      <div class="form-row">
+
+
+          <div class="form-group col-md-6">
+               <p>Pièce d'identité</p>
+               <div>
+                  <input type="radio" id="cin" name="pid" value="cin">
+                  <label for="cin">CIN</label>
+					<                       >
+                  <input type="radio" id="pas" name="pid" value="pas">
+                  <label for="pas">Passeport</label>
+               </div>
+          </div>
+
+                  <div class="form-group col-md-6">
+          <label for="nid">Numéro de la pièce d'identité</label>
+          {% render_field customerForm.nid|attr:'required:true'  class="form-control" placeholder="Num" %}
+        </div>
+      </div>
+
+<!--////////////////////<div class="form-check">///////////////////////////////////////////////////////////////////////////////////////-->
+    <div class="form-row">
+        <div class="form-group col-md-6">
+         <label for="birthday">Date de naissance</label>
+           <div>
+             <input type="date" id="birthday" name="birthday" min="1920-01-01" max="2015-01-01" >
+           </div>
+      </div>
+      <div class="form-group col-md-6">
+         <p>Genre</p>
+
+                   <div>
+             <input type="radio" id="female" name="gender" value="female">
+             <label for="female">Femme</label>
+          </div>
+
+           <div>
+             <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Homme</label>
+          </div>
+
+      </div>
+    </div>
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="profile_pic">Photo de Profil</label>
+          {% render_field customerForm.profile_pic|attr:'required:true' class="form-control" placeholder="" %}
+        </div>
+      </div>
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <button type="submit" class="btn btn-primary">S'inscrire</button>
+  </form>
+
+
+<br><br>
+{% include "insurance/footer.html" %}
+  </body>
+</html>
